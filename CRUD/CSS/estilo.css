@@ -1,0 +1,56 @@
+
+div {
+    margin: 10px;
+    align-items:center;
+    background-color:powderblue;
+}
+
+#divList {
+    height: 200px;
+}
+
+.listagem {
+    background-color:lightgrey;
+}
+
+select {
+    width: 200px;
+}
+
+.logo {
+    float: left;
+    width: 350px;
+    height: 80px;
+    cursor: pointer;
+    cursor: hand;
+    background-image:url(../images/valemobi.jpg);
+    background-repeat: repeat;
+    background-color:greenyellow;
+    scrollbar-3dlight-color:Background;
+
+}
+
+.logo2 {
+    float: left;
+    width: 550px;
+    height: 80px;
+    cursor: pointer;
+    cursor: hand;
+    background-image:url(../images/bandtec2.jpg);
+    background-repeat: repeat;
+    background-color:greenyellow;
+    scrollbar-3dlight-color:Background;
+    
+}
+
+.data {
+    color:forestgreen;
+    font-size:24px;
+}
+
+
+.criador {
+    color:blue;
+    background-color:red;
+    text-align:right;
+}
