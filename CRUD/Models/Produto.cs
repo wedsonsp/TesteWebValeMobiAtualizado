@@ -22,5 +22,6 @@ namespace CRUD.Models {
             return soma;
                  
         }
+
     }
 }
