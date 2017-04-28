@@ -4,7 +4,7 @@
 
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Cadastro de Produtos</title>
     <link type="text/css" rel="stylesheet" href="Content/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="CSS/estilo.css" />
