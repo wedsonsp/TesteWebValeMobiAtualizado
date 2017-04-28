@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using CRUD.Utils;
-using System.Globalization;
+using CRUD.Models;
 
 namespace CRUD
 {
     public partial class Edicao : System.Web.UI.Page
     {
-        //Variavel global para pegar a data e hora do sistema.
-        public DateTime data = DateTime.Now;
-
-        
+        //Variável para receber a Classe estatica HorarioDeBrasilia com o seu respectivo método.
+        //Formatando no Horario de Brasilia.
+        public DateTime cadastro = HorarioDeBrasilia.Agora;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,7 +49,7 @@ namespace CRUD
                                 txtMercadoria.Text = reader.GetString(0);
                                 txtNome.Text = reader.GetString(1);
                                 txtQuantidade.Text = reader.GetInt32(2).ToString();
-                                txtPreco.Text = reader.GetDouble(3).ToString();
+                                txtPreco.Text = reader.GetDecimal(3).ToString();
                                 drop.Text = reader.GetString(4);
 
                                 string.Format("{0:N}", txtPreco.Text);
@@ -126,11 +122,9 @@ namespace CRUD
 
             drop.Items.Add(item);
 
-            //Varaiável para atualizar o cadastro.
+            //Variável para receber a Classe estatica HorarioDeBrasilia com o seu respectivo método.
             //Formatando no Horario de Brasilia.
-            DateTime atualizacao = DateTime.Now;
-            CultureInfo brasil = new CultureInfo("pt-BR");
-            atualizacao.ToString(brasil);
+            DateTime atualizaData = HorarioDeBrasilia.Agora;
  
 
             // Cria e abre a conexão com o banco de dados
@@ -138,14 +132,14 @@ namespace CRUD
             {
 
                 // Cria um comando para atualizar um registro da tabela
-                using (SqlCommand cmd = new SqlCommand("UPDATE tbProduto SET TipoMercadoria = @mercadoria, Nome = @nome, Quantidade = @quantidade, Preco = @preco, TipoNegocio = @negocio, DataAtualizacao = @atualizacao WHERE Id = @id", conn))
+                using (SqlCommand cmd = new SqlCommand("UPDATE tbProduto SET TipoMercadoria = @mercadoria, Nome = @nome, Quantidade = @quantidade, Preco = @preco, TipoNegocio = @negocio, DataAtualizacao = @atualizaData WHERE Id = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@mercadoria", mercadoria);
                     cmd.Parameters.AddWithValue("@nome", nome);
                     cmd.Parameters.AddWithValue("@quantidade", quantidade);
                     cmd.Parameters.AddWithValue("@preco", preco);
                     cmd.Parameters.AddWithValue("@negocio", negocio);
-                    cmd.Parameters.AddWithValue("@atualizacao", atualizacao);
+                    cmd.Parameters.AddWithValue("@atualizaData", atualizaData);
 
                     cmd.Parameters.AddWithValue("@id", id);
 

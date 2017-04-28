@@ -33,7 +33,7 @@
                     <tr class="logo">
                         <div class="data">
                             <p>
-                                Data: <%=data.ToLongDateString()%>  Hora: <%=data.ToLongTimeString()%>
+                                Data: <%=cadastro.ToLongDateString()%>  Hora: <%=cadastro.ToLongTimeString()%>
                             </p>
                         </div>
                         <div class="criador">

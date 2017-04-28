@@ -20,8 +20,9 @@ namespace CRUD
         public decimal somaValorprodutoUnidade;
         public decimal somaValorProduto;
 
-        //Variavel global para pegar a data e hora do sistema.
-        public DateTime data = DateTime.Now;
+        //Variável para receber a Classe estatica HorarioDeBrasilia com o seu respectivo método.
+        //Formatando no Horario de Brasilia.
+        public DateTime cadastro = HorarioDeBrasilia.Agora;
 
         //Criando um objeto para a lista de Produtos.
         public List<Produto> produtos = new List<Produto>();

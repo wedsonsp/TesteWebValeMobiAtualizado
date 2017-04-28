@@ -24,7 +24,7 @@
                     <tr class="logo">
                         <div class="data">
                             <p>
-                                Data: <%=data.ToLongDateString()%>  Hora: <%=data.ToLongTimeString()%>
+                                Data: <%=cadastro.ToLongDateString()%>  Hora: <%=cadastro.ToLongTimeString()%>
                             </p>
                         </div>
                         <div class="criador">
@@ -75,7 +75,7 @@
                                         <td class="listagem"><%=produtos[cont].Quantidade %></td>
                                         <td class="listagem"><%=produtos[cont].PrecoStr %></td>
                                         <td class="listagem"><%=produtos[cont].TipoNegocio %></td>
-                                        <!-- Chama o método SomaProdutos a partir da Classe Produto-->
+                                        <!-- Chama o acessador SomaProdutosStr a partir da Classe Produto-->
                                         <td class="listagem"><%=produtos[cont].SomaProdutosStr%></td>
                                         <td class="listagem"><%=produtos[cont].DataCadastro %></td>
                                         <td class="listagem"><%=produtos[cont].DataAtualizacao %></td>
@@ -106,7 +106,7 @@
                                 <tr>
 
                                     <td class="listagem"><%=cont %></td>
-                                    <td class="listagem"><%=somaQuantidade %></td>
+                                    <td class="listagem">R$ <%=somaQuantidade.ToString("N") %></td>
                                     <td class="listagem">R$ <%=somaValorproduto.ToString("N") %></td>
                                     <td class="listagem">R$ <%=somaValorprodutoUnidade.ToString("N") %></td>
 

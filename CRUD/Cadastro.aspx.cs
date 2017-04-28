@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using CRUD.Utils;
-using System.Globalization;
 using CRUD.Models;
 
 namespace CRUD
 {
     public partial class Criacao : System.Web.UI.Page
     {
-        //Variavel global para pegar a data e hora do sistema.
-        public DateTime data = DateTime.Now;
-
-        //Criando uma lista.
+        //Variável para receber a Classe estatica HorarioDeBrasilia com o seu respectivo método.
+        //Formatando no Horario de Brasilia.
+        public DateTime cadastro = HorarioDeBrasilia.Agora;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,17 +71,12 @@ namespace CRUD
 
             drop.Items.Add(item);
 
-            //Variaveis para controlar as Datas de Cadastro e Atualização
-            //Variável para atualizar o cadastro.
-            //Formatando no Horario de Brasilia.
-            DateTime cadastro = HorarioDeBrasilia.Agora;
-
             // Cria e abre a conexão com o banco de dados
             using (SqlConnection conn = Sql.OpenConnection())
             {
 
                 // Cria um comando para inserir um novo registro à tabela
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProduto (TipoMercadoria, Nome , Quantidade , Preco , TipoNegocio, DataCadastro, DataAtualizacao) VALUES (@mercadoria, @nome, @quantidade, @preco, @negocio, @cadastro, @cadastro)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProduto (TipoMercadoria, Nome , Quantidade , Preco , TipoNegocio, DataCadastro) VALUES (@mercadoria, @nome, @quantidade, @preco, @negocio, @cadastro)", conn))
                 {
 
                     cmd.Parameters.AddWithValue("@mercadoria", mercadoria);

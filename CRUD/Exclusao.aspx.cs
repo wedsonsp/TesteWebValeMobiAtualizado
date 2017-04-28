@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CRUD.Utils;
+using CRUD.Models;
 
 namespace CRUD {
 	public partial class Exclusao : System.Web.UI.Page {
-        //Variavel global para pegar a data e hora do sistema.
-        public DateTime data = DateTime.Now;
+        //Variável para receber a Classe estatica HorarioDeBrasilia com o seu respectivo método.
+        //Formatando no Horario de Brasilia.
+        public DateTime cadastro = HorarioDeBrasilia.Agora;
 
         protected void Page_Load(object sender, EventArgs e) {
 			HttpCookie cookie = Request.Cookies["login"];

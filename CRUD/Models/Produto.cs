@@ -19,8 +19,7 @@ namespace CRUD.Models {
 		public string TipoNegocio { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime DataAtualizacao { get; set; }
-        public DateTime DataExclusao { get; set; }
-       
+
         //Método para Calcular a soma dos produtos.
         public decimal SomaProdutos
         {
