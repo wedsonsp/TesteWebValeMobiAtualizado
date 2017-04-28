@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CRUD.Utils;
 using System.Globalization;
+using CRUD.Models;
 
 namespace CRUD
 {
@@ -56,9 +57,9 @@ namespace CRUD
                 return;
             }
 
-            double preco;
+            decimal preco;
 
-            if (double.TryParse(txtPreco.Text, out preco) == false)
+            if (decimal.TryParse(txtPreco.Text, out preco) == false)
             {
                 // Campo não contém um número float!
                 lblMsg.Text = "Preço inválido!";
@@ -78,19 +79,14 @@ namespace CRUD
             //Variaveis para controlar as Datas de Cadastro e Atualização
             //Variável para atualizar o cadastro.
             //Formatando no Horario de Brasilia.
-            DateTime cadastro = DateTime.Now;
-            DateTime atualizacao = DateTime.Now;
-            CultureInfo brasil = new CultureInfo("pt-BR");
-            cadastro.ToString(brasil);
-            atualizacao.ToString(brasil);
-
+            DateTime cadastro = HorarioDeBrasilia.Agora;
 
             // Cria e abre a conexão com o banco de dados
             using (SqlConnection conn = Sql.OpenConnection())
             {
 
                 // Cria um comando para inserir um novo registro à tabela
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProduto (TipoMercadoria, Nome , Quantidade , Preco , TipoNegocio, DataCadastro, DataAtualizacao) VALUES (@mercadoria, @nome, @quantidade, @preco, @negocio, @cadastro, @atualizacao)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProduto (TipoMercadoria, Nome , Quantidade , Preco , TipoNegocio, DataCadastro, DataAtualizacao) VALUES (@mercadoria, @nome, @quantidade, @preco, @negocio, @cadastro, @cadastro)", conn))
                 {
 
                     cmd.Parameters.AddWithValue("@mercadoria", mercadoria);
@@ -111,7 +107,6 @@ namespace CRUD
                     }
 
                     cmd.Parameters.AddWithValue("@cadastro", cadastro);
-                    cmd.Parameters.AddWithValue("@atualizacao", atualizacao);
 
                     cmd.ExecuteNonQuery();
 

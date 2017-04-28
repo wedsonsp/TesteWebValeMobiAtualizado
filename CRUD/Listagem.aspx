@@ -73,10 +73,10 @@
                                         <td class="listagem"><%=produtos[cont].TipoMercadoria %></td>
                                         <td class="listagem"><%=produtos[cont].Nome %></td>
                                         <td class="listagem"><%=produtos[cont].Quantidade %></td>
-                                        <td class="listagem"><%=produtos[cont].Preco.ToString("R$ 0.00") %></td>
+                                        <td class="listagem"><%=produtos[cont].PrecoStr %></td>
                                         <td class="listagem"><%=produtos[cont].TipoNegocio %></td>
                                         <!-- Chama o método SomaProdutos a partir da Classe Produto-->
-                                        <td class="listagem"><%=produtos[cont].SomaProdutos().ToString("R$ 0.00")%></td>
+                                        <td class="listagem"><%=produtos[cont].SomaProdutosStr%></td>
                                         <td class="listagem"><%=produtos[cont].DataCadastro %></td>
                                         <td class="listagem"><%=produtos[cont].DataAtualizacao %></td>
 
@@ -107,8 +107,8 @@
 
                                     <td class="listagem"><%=cont %></td>
                                     <td class="listagem"><%=somaQuantidade %></td>
-                                    <td class="listagem"><%=somaValorproduto.ToString("R$ 0.00") %></td>
-                                    <td class="listagem"><%=somaValorprodutoUnidade.ToString("R$ 0.00") %></td>
+                                    <td class="listagem">R$ <%=somaValorproduto.ToString("N") %></td>
+                                    <td class="listagem">R$ <%=somaValorprodutoUnidade.ToString("N") %></td>
 
                                 </tr>
 

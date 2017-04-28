@@ -15,10 +15,10 @@ namespace CRUD
     {
 
         //Variável global para fazer o Calculo da quantidade total de Produtos a serem mostrados na Listagem.
-        public double somaQuantidade;
-        public double somaValorproduto;
-        public double somaValorprodutoUnidade;
-        public double somaValorProduto;
+        public decimal somaQuantidade;
+        public decimal somaValorproduto;
+        public decimal somaValorprodutoUnidade;
+        public decimal somaValorProduto;
 
         //Variavel global para pegar a data e hora do sistema.
         public DateTime data = DateTime.Now;
@@ -54,7 +54,7 @@ namespace CRUD
                             p.TipoMercadoria = reader.GetString(1);
                             p.Nome = reader.GetString(2);
                             p.Quantidade = reader.GetInt32(3);
-                            p.Preco = reader.GetDouble(4);
+                            p.Preco = reader.GetDecimal(4);
                             p.TipoNegocio = reader.GetString(5);
                             p.DataCadastro = reader.GetDateTime(6);
                             p.DataAtualizacao = reader.GetDateTime(7);
