@@ -12,6 +12,7 @@ namespace CRUD
         //Variável para receber a Classe estatica HorarioDeBrasilia com o seu respectivo método.
         //Formatando no Horario de Brasilia.
         public DateTime cadastro = HorarioDeBrasilia.Agora;
+        public DateTime dataAtualizacao = HorarioDeBrasilia.Agora;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,7 +77,7 @@ namespace CRUD
             {
 
                 // Cria um comando para inserir um novo registro à tabela
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProduto (TipoMercadoria, Nome , Quantidade , Preco , TipoNegocio, DataCadastro) VALUES (@mercadoria, @nome, @quantidade, @preco, @negocio, @cadastro)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO tbProduto (TipoMercadoria, Nome , Quantidade , Preco , TipoNegocio, DataCadastro, DataAtualizacao) VALUES (@mercadoria, @nome, @quantidade, @preco, @negocio, @cadastro, @dataAtualizacao)", conn))
                 {
 
                     cmd.Parameters.AddWithValue("@mercadoria", mercadoria);
@@ -97,6 +98,7 @@ namespace CRUD
                     }
 
                     cmd.Parameters.AddWithValue("@cadastro", cadastro);
+                    cmd.Parameters.AddWithValue("@dataAtualizacao", dataAtualizacao);
 
                     cmd.ExecuteNonQuery();
 

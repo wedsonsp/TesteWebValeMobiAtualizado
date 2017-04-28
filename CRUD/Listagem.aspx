@@ -61,6 +61,8 @@
                                         <th class="well">Valor Total de da cada Produto por unidade</th>
                                         <th class="well">Data de Cadastro</th>
                                         <th class="well">Data de Atualização</th>
+                                        <th class="well"> </th>
+                                        <th class="well"> </th>
                                     </tr>
                                     <%  int cont = 0;
 
