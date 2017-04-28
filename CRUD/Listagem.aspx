@@ -108,7 +108,7 @@
                                 <tr>
 
                                     <td class="listagem"><%=cont %></td>
-                                    <td class="listagem">R$ <%=somaQuantidade.ToString("N") %></td>
+                                    <td class="listagem"><%=somaQuantidade%></td>
                                     <td class="listagem">R$ <%=somaValorproduto.ToString("N") %></td>
                                     <td class="listagem">R$ <%=somaValorprodutoUnidade.ToString("N") %></td>
 
