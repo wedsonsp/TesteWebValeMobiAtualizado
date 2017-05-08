@@ -139,7 +139,7 @@
     <Compile Include="Models\HorarioDeBrasilia.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\Utils\Sql.cs" />
+    <Compile Include="Utils\Sql.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
